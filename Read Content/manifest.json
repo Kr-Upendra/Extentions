@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Content Reader",
+  "version": "1.0",
+  "description": "This is for those who are to lazy to read the content while browsing.",
+  "icons": {
+    "16": "images/icon_16.png",
+    "32": "images/icon_32.png",
+    "48": "images/icon_48.png",
+    "128": "images/icon_128.png"
+  },
+  "action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": ["https://"]
+    }
+  ]
+}
