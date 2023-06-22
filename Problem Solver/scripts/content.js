@@ -1,7 +1,4 @@
 const getMenu = document.querySelector("body");
-const problemTitleBox = document.querySelector(
-  ".problems_header_content__title__L2cB2 .g-m-0"
-);
 
 const buttonStyle =
   "color: #fff; font-weight: 500; padding: .55rem 1rem; position: fixed; top: 30%; right: 0; background-image: linear-gradient(to right, #8360c3, #2ebf91); border: none; border-radius: 3rem; z-index: 1000; font-size: 1rem; cursor: pointer; font-family: inherit;";
