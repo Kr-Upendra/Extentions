@@ -9,13 +9,12 @@
     "48": "images/icon_48.png",
     "128": "images/icon_128.png"
   },
-  "action": {
-    "default_popup": "index.html"
-  },
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "permissions": ["tabs", "activeTab"],
   "content_scripts": [
     {
       "js": ["scripts/content.js"],
-      "matches": ["https://"]
+      "matches": ["https://*/*"]
     }
   ]
 }
