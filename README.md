@@ -8,9 +8,9 @@ A repository that will contains some cool extensions which is developed by me.
 
 <br>
 
-1. ### Content Reader (In Development)
+1. ### Content Reader (Completed)
 
-   - This extension is only accessible on my portfolio site if you load this extention.
+   - This extension is only accessible on my [portfolio](https://kupendra.netlify.app) site if you load this extention.
    - This simply read the about text and speak.
 
 <br>
