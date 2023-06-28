@@ -12,10 +12,7 @@
   "content_scripts": [
     {
       "js": ["scripts/content.js"],
-      "matches": [
-        "https://practice.geeksforgeeks.org/problems/*",
-        "https://leetcode.com/problems/*"
-      ]
+      "matches": ["https://practice.geeksforgeeks.org/problems/*"]
     }
   ]
 }

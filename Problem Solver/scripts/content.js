@@ -1,5 +1,4 @@
-const getMenu = document.querySelector("body");
-
+const body = document.querySelector("body");
 const buttonStyle =
   "color: #fff; font-weight: 500; padding: .55rem 1rem; position: fixed; top: 30%; right: 0; background-image: linear-gradient(to right, #8360c3, #2ebf91); border: none; border-radius: 3rem; z-index: 1000; font-size: 1rem; cursor: pointer; font-family: inherit;";
 
@@ -15,7 +14,7 @@ const closebtnStyle =
   "padding: 0.3rem 0.7rem; color: white; border-radius: 0.3rem; border: 2px solid red; cursor: pointer;";
 
 const videoplacerStyle =
-  "width: 100%; height: 85%; overflow: hidden; border-radius: 1rem; border: 2px solid red";
+  "width: 100%; height: 85%; overflow: hidden; border-radius: 1rem;";
 
 const hideContainer = (container, btn) => {
   btn.addEventListener("click", () => {
@@ -54,7 +53,7 @@ const createFrontend = (videoId) => {
   frame.setAttribute("frameborder", "0");
   frame.setAttribute("width", "100%");
   frame.setAttribute("height", "100%");
-  frame.setAttribute("src", `https://www.youtube.com/embed/${videoId}`);
+  frame.setAttribute("src", `https://youtube.com/embed/${videoId}`);
 
   // giving values to those element which required some values.
   title.textContent = "Problem Solver";
@@ -70,12 +69,29 @@ const createFrontend = (videoId) => {
   return container;
 };
 
-if (getMenu) {
-  const button = document.createElement("button");
-  button.textContent = "Video Solution";
-  button.style.cssText = buttonStyle;
-  const container = createFrontend("tgbNymZ7vqY");
-  getMenu.appendChild(button);
-  getMenu.appendChild(container);
-  showContainer(container, button);
-}
+const getProblemName = () => {
+  const nameBox = body.querySelector(
+    ".problems_header_content__title__L2cB2 h3"
+  );
+  return nameBox.textContent;
+};
+
+const showContent = async () => {
+  if (body) {
+    const button = document.createElement("button");
+    button.textContent = "Video Solution";
+    button.style.cssText = buttonStyle;
+    const query = getProblemName();
+    const response = await fetch(
+      `https://videoid.onrender.com/${query} problem`
+    );
+    const data = await response.json();
+    const videoId = data.response[0].id.videoId;
+    const container = createFrontend(videoId);
+    body.appendChild(button);
+    body.appendChild(container);
+    showContainer(container, button);
+  }
+};
+
+showContent();
