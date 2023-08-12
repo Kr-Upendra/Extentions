@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Change Images",
+  "version": "1.0.0",
+  "description": "A tools that can replace all default images on a site with your specified images.",
+
+  "icons": {
+    "16": "images/icon_16.png",
+    "32": "images/icon_32.png",
+    "48": "images/icon_48.png",
+    "128": "images/icon_128.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": ["<all_url>"]
+    }
+  ]
+}
