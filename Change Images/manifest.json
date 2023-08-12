@@ -13,7 +13,7 @@
   "content_scripts": [
     {
       "js": ["scripts/content.js"],
-      "matches": ["<all_url>"]
+      "matches": ["https://*/*"]
     }
   ]
 }
